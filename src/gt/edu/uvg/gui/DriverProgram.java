@@ -16,6 +16,7 @@ public class DriverProgram {
 		// TODO Auto-generated method stub
 
 		System.out.println("Este serel el programa de Administrador de Perreras 2022");
+		System.out.println("Programa realizado de forma grupal");
 	}
 
 }
