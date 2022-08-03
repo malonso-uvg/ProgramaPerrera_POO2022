@@ -50,4 +50,9 @@ public class SearchMethod {
 		return true;
 	}
 	
+	private int GenerateRandom() {
+		Random ran = new Random();
+		int random = ran.nextInt(20)+1;
+		return random;
+	}
 }
