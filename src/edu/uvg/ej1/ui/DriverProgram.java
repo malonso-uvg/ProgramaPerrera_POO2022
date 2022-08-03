@@ -1,9 +1,10 @@
-;/**
+/**
  * 
  */
 package edu.uvg.ej1.ui;
 
 import edu.uvg.ej1.model.Dog;
+import edu.uvg.ej1.model.Friend;
 
 import java.util.Scanner;
 /**
@@ -24,10 +25,10 @@ public class DriverProgram {
 		Scanner SAOPAPU = new Scanner(System.in);
 		SAOPAPU.nextLine();
 		System.out.println("The dog name is:" + perro.getName());
-		System.out.println("The breed is:" + perro.getBreed(););
-		System.out.println("The weight is:" + perro.getWeight(););
+		System.out.println("The breed is:" + perro.getBreed());
+		System.out.println("The weight is:" + perro.getWeight());
 		System.out.println("The dog primary color is:" + perro.getPrimaryColor());
-		System.out.println("The dog second color is:" + perro.getSecondColor());
+		System.out.println("The dog second color is:" + perro.getSecondaryColor());
 	}
 
 	public void ShowFriendData(Friend amigo) {
@@ -35,7 +36,7 @@ public class DriverProgram {
 		Scanner TACOGHOULPAPU = new Scanner(System.in);
 		TACOGHOULPAPU.nextLine();
 		System.out.println("The friend actual money name is:" + amigo.getActualMoney());
-		System.out.println("The friend's dog is lost: " + amigo.getDogIsLost(););
+		System.out.println("The friend's dog is lost: " + amigo.isDogIsLost());
 	}
 
 
@@ -62,37 +63,42 @@ public class DriverProgram {
 		System.out.println("Ingrese el color de su perro");
 		String primaryColor = entrada.nextLine();
 		
-		dog = new Dog(name, breed, primaryColor)
+		dog = new Dog(name, breed, primaryColor);
 
 		dog.setName(name);
 		dog.setBreed(breed);
 		dog.setPrimaryColor(primaryColor);
 		entrada.close();
+		return dog;
 	}
 	
-	public static enterFriendData():{
+	public static Friend enterFriendData(){
 		boolean isLost;
-		Friend amigo = new Friend();
+		Friend amigo;
 		
 		Scanner entrada = new Scanner(System.in);
 		System.out.println("Cual es tu nombre?");
-		String name = entrada.nextString();
-		amigo.setName(name) 
+		String name = entrada.nextLine();
+		
 		
 		System.out.println("Cual es tu numero de telefono?");
 		int telefono = entrada.nextInt();
-		amigo.setPhone(telefono) 
+		
 		
 		System.out.println("Tu perro esta perdido? Escribe si o no");
-		String perdido = entrada.nextString();
+		String perdido = entrada.nextLine();
+		
+		amigo = new Friend(name, telefono);
 		
 		if (perdido == "si") {
-			isLost = True;
-			setDogIsLost(isLost);
+			isLost = true;
+			amigo.setDogIsLost(isLost);
 		}
 		else {
-			isLost = False;
-			setDogIsLost(isLost);
+			isLost = false;
+			amigo.setDogIsLost(isLost);
 		}
-
+		
+		return amigo;
+	}
 }

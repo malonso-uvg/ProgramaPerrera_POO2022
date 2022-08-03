@@ -5,6 +5,7 @@ package edu.uvg.ej1.controller;
 
 import edu.uvg.ej1.model.Dog;
 import edu.uvg.ej1.model.Friend;
+import java.util.Random;
 
 /**
  * @author MAAG
@@ -31,7 +32,7 @@ public class SearchMethod {
 	 * @return True, if the search operation an be performed, false otherwise
 	 */
 	public boolean operationCanBeExecuted(Friend owner) {
-		if(owner.isDogLost() == false){
+		if(owner.isDogIsLost() == false){
 			operationFailureDetails = "El perro ha sido encontrado";
 			return false;
 		}
@@ -44,7 +45,6 @@ public class SearchMethod {
 				return true;
 			}
 		}
-		return false;
 	}
 	
 	public String getFailureDetails() {
