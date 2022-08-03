@@ -69,5 +69,30 @@ public class DriverProgram {
 		dog.setPrimaryColor(primaryColor);
 		entrada.close();
 	}
+	
+	public static enterFriendData():{
+		boolean isLost;
+		Friend amigo = new Friend();
+		
+		Scanner entrada = new Scanner(System.in);
+		System.out.println("Cual es tu nombre?");
+		String name = entrada.nextString();
+		amigo.setName(name) 
+		
+		System.out.println("Cual es tu numero de telefono?");
+		int telefono = entrada.nextInt();
+		amigo.setPhone(telefono) 
+		
+		System.out.println("Tu perro esta perdido? Escribe si o no");
+		String perdido = entrada.nextString();
+		
+		if (perdido == "si") {
+			isLost = True;
+			setDogIsLost(isLost);
+		}
+		else {
+			isLost = False;
+			setDogIsLost(isLost);
+		}
 
 }
