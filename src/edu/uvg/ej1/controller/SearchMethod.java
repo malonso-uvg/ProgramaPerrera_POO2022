@@ -47,7 +47,25 @@ public class SearchMethod {
 	 * @return true if the dog has been found, false otherwise
 	 */
 	public boolean isSuccessfulOperation(Friend owner, Dog lostDog) {
-		return true;
+
+		int numRandom = GenerateRandom();
+		boolean flag= false;
+		double actualMoney= owner.getActualMoney();
+		boolean isLostDog = owner.isDogIsLost();
+		if(numRandom<effectivenessValue){
+			actualMoney=actualMoney-operationCost;
+			isLostDog = false;
+			owner.setActualMoney(actualMoney);
+			owner.setDogIsLost(isLostDog);
+			flag =true;
+		}
+
+
+		return flag;
 	}
 	
+	
+	private int GenerateRandom(){
+		return 1;
+	}
 }
