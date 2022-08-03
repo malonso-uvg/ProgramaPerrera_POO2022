@@ -22,7 +22,7 @@ public class SearchMethod {
 		effectivenessValue = _effectivenessValue;
 		operationCost = _operationCost;
 	}
-	
+
 	/***
 	 * This method evaluate if a operation search can be performed, evaluation
 	 * based the money remaining, the operation cost, etc, if operation cannot be 
@@ -31,6 +31,19 @@ public class SearchMethod {
 	 * @return True, if the search operation an be performed, false otherwise
 	 */
 	public boolean operationCanBeExecuted(Friend owner) {
+		if(owner.isDogLost() == false){
+			operationFailureDetails = "El perro ha sido encontrado";
+			return false;
+		}
+		else{
+			if(operationCost > owner.getActualMoney()){
+				operationFailureDetails = "El Dinero no es suficiente";
+				return false;
+			}
+			else {
+				return true;
+			}
+		}
 		return false;
 	}
 	
