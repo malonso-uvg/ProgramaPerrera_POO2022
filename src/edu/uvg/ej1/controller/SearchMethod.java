@@ -65,10 +65,12 @@ public class SearchMethod {
 		boolean flag= false;
 		double actualMoney= owner.getActualMoney();
 		boolean isLostDog = owner.isDogIsLost();
+		actualMoney=actualMoney-operationCost;
+		owner.setActualMoney(actualMoney);
 		if(numRandom<effectivenessValue){
-			actualMoney=actualMoney-operationCost;
+			
 			isLostDog = false;
-			owner.setActualMoney(actualMoney);
+			
 			owner.setDogIsLost(isLostDog);
 			flag =true;
 		}

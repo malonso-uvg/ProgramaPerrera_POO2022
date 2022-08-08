@@ -21,7 +21,8 @@ public class Friend {
 		setName(_name);
 		setPhone(_phone);
 		Random rnd = new Random();
-		initialMoney = rnd.nextDouble() * 1000 + 1;
+		initialMoney = (double)rnd.nextInt(1000);
+		actualMoney = initialMoney;
 	}
 	
 	/**
