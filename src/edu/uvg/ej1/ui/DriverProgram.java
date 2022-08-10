@@ -7,6 +7,7 @@ import edu.uvg.ej1.model.Dog;
 
 import edu.uvg.ej1.model.Friend;
 
+import java.awt.EventQueue;
 import java.util.Scanner;
 
 import edu.uvg.ej1.controller.SearchMethod;
@@ -19,6 +20,21 @@ public class DriverProgram {
 	 * @param args
 	 */
 	public static void main(String[] args) {
+		
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					MainWindow frame = new MainWindow();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+		
+		/*
+		
+		
 		System.out.println("PROGRAMA PERRERA 2022");
 		
 		Friend miAmigo;
@@ -121,7 +137,7 @@ public class DriverProgram {
 			}
 			
 		}
-		
+		*/
 	}
 
 
